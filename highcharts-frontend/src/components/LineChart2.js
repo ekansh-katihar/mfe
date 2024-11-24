@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-const LineChart = () => {
+const LineChart2 = () => {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8090/generatePoints?param=500')
+    fetch('http://localhost:8090/generatePoints?param=80')
       .then((response) => response.json())
       .then((data) => {
         setChartData(data.map((point) => [point.x, point.y]));
@@ -23,4 +23,4 @@ const LineChart = () => {
   return <HighchartsReact highcharts={Highcharts} options={options} />;
 };
 
-export default LineChart;
+export default LineChart2;
